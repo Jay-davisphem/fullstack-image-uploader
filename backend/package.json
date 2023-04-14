@@ -1,17 +1,19 @@
 {
-  "name": "backend",
+  "name": "backend-image-uploader",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backbone of the frontend-image-uploader",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon --experimental-specifier-resolution=nodemon index.js",
+    "start": "node --experimental-specifier-resolution=node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.3",
@@ -20,5 +22,5 @@
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
-   "type": "module"
+  "type": "module"
 }

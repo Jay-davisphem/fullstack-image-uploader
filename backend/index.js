@@ -1,6 +1,11 @@
-import express from 'express'
+import { config } from 'dotenv';
+import express from 'express';
+
+import Connection from './lib/connectionSetup';
+
+config();
 
 const app = express();
 
-
-app.listen(3000)
+const connection = new Connection(app);
+connection.connect();
