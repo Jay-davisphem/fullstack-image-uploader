@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import express from 'express';
 
-import Connection from './lib/connectionSetup';
+import Connection from './lib/connectionSetup.js';
 
 config();
 

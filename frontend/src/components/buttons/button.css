@@ -1,0 +1,14 @@
+.btn{}
+
+.btn.choose-file{
+    margin: 0px 0 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    outline: none;
+    border: none;
+}
+
+.btn.choose-file:hover{
+    opacity: 0.8;
+}

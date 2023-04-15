@@ -1,6 +1,6 @@
 import TopTitle from '../../components/TopTitle';
 import Upload from '../../components/Upload';
-import CopyButton from '../../components/CopyButton';
+import CopyButton from '../../components/buttons/CopyButton';
 
 export default function () {
   const img = {

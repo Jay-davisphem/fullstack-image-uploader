@@ -1,0 +1,29 @@
+ /* .demo-wrapper {
+	width: 300px;
+	margin: 30px auto 0;
+} 
+.html5-progress-bar {
+	padding: 15px 15px;
+	border-radius: 3px;
+	background-color: #fff;
+	box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, .2);
+}
+.html5-progress-bar progress:not([value]) {
+        background-color: #f3f3f3;
+        border: 0;
+        width: 80%;
+        height: 18px;
+        border-radius: 9px;
+}
+.html5-progress-bar progress:not([value])::-webkit-progress-bar {
+	background-color: #f3f3f3;
+	border-radius: 9px;
+}
+.html5-progress-bar progress:not([value])::-webkit-progress-value {
+	border-radius: 9px;
+}
+.html5-progress-bar progress:not([value])::-moz-progress-bar {
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='blue', endColorstr='blue',GradientType=0 );
+	border-radius: 9px;
+} 
+*/

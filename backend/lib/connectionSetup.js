@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 export default class Connection {
   constructor(
     app,
-    dbURI = 'mongodb://127.0.0.1:27017/uploader-test',
+    dbURI = 'mongodb+srv://davisphem:Fq5DBGxwenpnvJRg@davisphem.jsmcxlo.mongodb.net/uploader-test?retryWrites=true&w=majority',
     port = 8080,
     domain = 'http://localhost'
   ) {
@@ -18,7 +18,7 @@ export default class Connection {
       .then((_info) => {
         console.log('Database connected');
         this.app.listen(this.port, () => {
-          console.log(`App connected to ${domain}:${port}/`);
+          console.log(`App connected to ${this.domain}:${this.port}/`);
         });
       })
       .catch((err) => console.log(err));

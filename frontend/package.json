@@ -1,5 +1,5 @@
 {
-"name": "front-end-image-uploader",
+  "name": "front-end-image-uploader",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.8",
+    "framer-motion": "^10.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -16,9 +18,11 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
     "vite": "^4.2.0"
   },
-
   "publisher": "jay-davisphem",
   "displayName": "David Oluwafemi",
   "repository": "https://github.com/jay-davisphem/fullstack-image-uploader"
