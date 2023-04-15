@@ -9,8 +9,8 @@ export default function ({
   height,
   borderRadius,
   margin,
+  completed,
 }) {
-  const [isAnimate, setIsAnimate] = useState(false)
   const animate = {
     x: ['0%', '100%', '200%', '300%'],
     width: ['25%', '25%', '25%', '25%'],
@@ -36,13 +36,14 @@ export default function ({
             outline: 'none',
             height,
           }}
-          animate={isAnimate? animate: {}}
+          animate={completed ? {} : animate}
           transition={{
             ease: 'linear',
             repeat: Infinity,
             duration: 5,
           }}
         ></motion.div>
+        {completed && <div style={{ textAlign: 'right' }}>done</div>}
       </div>
     </Card>
   );

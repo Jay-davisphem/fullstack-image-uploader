@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProgressBar from './progress-bar/ProgressBar';
-export default function () {
+export default function ({ isError }) {
   return (
     <div className="loading-bar-container">
       <ProgressBar
@@ -10,6 +10,7 @@ export default function () {
         height="10px"
         borderRadius="20px"
         margin="30px 0 10px"
+        completed={false}
       />
     </div>
   );
