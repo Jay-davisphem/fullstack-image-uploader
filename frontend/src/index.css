@@ -20,9 +20,10 @@
   --placeholder-border-radius: 10px;
   --major-padding: 10px 30px;
   --screen-min-width: 80%;
-  --screen-min-h: 60vh;
+  --screen-min-h: 100vh;
   --dotted-border: #7e75fc;
   --dotted-bg: #f6f8fb;
+  --result-image-w: 300px;
 }
 
 a {
@@ -61,5 +62,14 @@ h1 {
   :root{
     color:antiquewhite;
     background-color: #1a1a1a;
+  }
+}
+
+
+@media (max-width: 800px){
+  :root{
+  --result-image-w: 300px;
+  --screen-min-width: 100%;
+  --major-padding: 10px 20px; 
   }
 }

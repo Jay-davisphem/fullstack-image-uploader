@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProgressBar from './progress-bar/ProgressBar';
-export default function ({ isError }) {
+export default function ({ isError, setPage }) {
   return (
     <div className="loading-bar-container">
       <ProgressBar
@@ -10,7 +10,8 @@ export default function ({ isError }) {
         height="10px"
         borderRadius="20px"
         margin="30px 0 10px"
-        completed={false}
+        completed={true}
+        setPage={setPage}
       />
     </div>
   );

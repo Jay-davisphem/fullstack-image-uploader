@@ -1,7 +1,7 @@
 export default function ({ isPlaceHolder, img }) {
-  const placeholder = isPlaceHolder ? 'placeholder' : '';
+  const placeholder = isPlaceHolder ? 'placeholder' : 'nonplace';
   return (
-    <div className="upload-container">
+    <div className={`upload-container ${placeholder}`}>
       <img
         className={`image ${placeholder}`}
         src={img.url}

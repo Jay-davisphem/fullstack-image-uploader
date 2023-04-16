@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import './progress-bar.css';
 import Card from './Card';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 export default function ({
   text,
   parentColor,
@@ -10,11 +10,16 @@ export default function ({
   borderRadius,
   margin,
   completed,
+  setPage,
 }) {
+  const ref = useRef();
   const animate = {
     x: ['0%', '100%', '200%', '300%'],
     width: ['25%', '25%', '25%', '25%'],
   };
+  useEffect(() => {
+    ref.currrent?.click();
+  }, [completed]);
   return (
     <Card>
       <p className="loading-text">{text}</p>
@@ -43,7 +48,17 @@ export default function ({
             duration: 5,
           }}
         ></motion.div>
-        {completed && <div style={{ textAlign: 'right' }}>done</div>}
+        {completed && (
+          <div
+            ref={ref}
+            style={{ textAlign: 'right' }}
+            onClick={() => {
+              setPage('result');
+            }}
+          >
+            done
+          </div>
+        )}
       </div>
     </Card>
   );

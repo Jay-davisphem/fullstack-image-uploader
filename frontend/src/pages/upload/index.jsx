@@ -23,7 +23,7 @@ export default function ({ setPage }) {
       <p className="or">Or</p>
       <Button
         name="Choose a file"
-        setPage={setPage}
+        onClick={() => setPage('loading')}
         color="#fff"
         bg="#0077ff"
       />
