@@ -6,7 +6,7 @@ export default function ({ url, copyToClipBoard, isCopied }) {
       <p
         className={`image-url ${isCopied ? 'copied' : ''}`}
         onCopy={(e) => copyToClipBoard(url)}
-        onCut={(e) => (copyToClipboard = url)}
+        onCut={(e) => copyToClipBoard(url)}
       >
         {url.length > 42 ? url.substring(0, 42) + '...' : url}
       </p>
