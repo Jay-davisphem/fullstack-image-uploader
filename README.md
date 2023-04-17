@@ -53,7 +53,8 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 - [React](https://reactjs.org/)
 - [Expressjs](https://expressjs.com)
-
+- [MongoDB](https://mongodb.com)
+  - C:\>"C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath="c:\data\db"
 ## Features
 
 

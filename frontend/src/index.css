@@ -16,14 +16,15 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   --main-bg-color: white;
-  --placeholder-color:  lightgrey;
-  --placeholder-border-radius: 10px;
+  --placeholder-color:  #97BEF4;
+  --placeholder-border-radius: 12px;
   --major-padding: 10px 30px;
   --screen-min-width: 80%;
   --screen-min-h: 100vh;
   --dotted-border: #7e75fc;
   --dotted-bg: #f6f8fb;
   --result-image-w: 300px;
+  --result-image-h: ;
 }
 
 a {

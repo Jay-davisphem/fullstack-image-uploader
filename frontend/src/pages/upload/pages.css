@@ -1,7 +1,7 @@
 .upload-page{
     background-color: var(--main-bg-color);
     border-radius: var(--placeholder-border-radius);
-    box-shadow: 1px 1px 10px 5px #eee, -1px -1px 10px 5px  #eee;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     padding: var(--major-padding);
     max-width: var(--screen-min-width);
     max-height: var(--screen-min-h);
@@ -10,7 +10,7 @@
 .upload-page .or{
     margin: 20px 0;
     font-size: 0.7rem;
-    color: #aaa;
+    color: #BDBDBD;
 }
 
 .top-title-container{
@@ -20,10 +20,11 @@
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0;
+    color:  
 }
 
 .top-title-container .text.txt2{
-    color: grey;
+    color: #4F4F4F;
     margin: 20px 0px;
     font-size: 0.7rem;
 }
@@ -46,7 +47,7 @@
     padding: 20px 100px;
 }
 .upload-container.placeholder{
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='rgba(170, 160, 240)' stroke-width='2' stroke-dasharray='8%2c 12' stroke-dashoffset='20' stroke-linecap='square'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='rgb(151, 190, 244)' stroke-width='2' stroke-dasharray='8%2c 12' stroke-dashoffset='20' stroke-linecap='square'/%3e%3c/svg%3e");
     background-color: var(--dotted-bg);
 }
 
@@ -77,13 +78,15 @@
     color: #aaa;
     font-size: 0.7rem;
     margin: 20px 0 0;
+    width: max-content;
+    margin-left: -20px;
 }
 
 .loading-bar-container{
     width: 30vw;
     min-height: 100px;
     text-align: left;
-    box-shadow: 1px 1px 10px 5px #eee, -1px -1px 10px 5px  #eee;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     padding: 30px 20px;
 }
 
@@ -92,6 +95,7 @@
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 30px;
+    color: #4F4F4F;
 }
 
 
@@ -103,22 +107,23 @@
 
 .copy{
     display: flex;
-    width: var(--result-image-w);
+    width: calc(var(--result-image-w) - 7.2px);
     padding: 2px;
     border: 2px solid #ccc;
     justify-content: space-between;
     border-radius: 8px;
     margin: 30px 0;
-    background-color: #eee;
+    background-color: #E0E0E0;
     font-size: 0.6rem;
     align-items: center;
 }
 .copy .image-url{
     display: inline-block;
     margin: 5px;
+    color: #4F4F4F;
 }
 .copy .btn{
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-size: 0.6rem;
     margin: 0;
 }

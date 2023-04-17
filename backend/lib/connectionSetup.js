@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 export default class Connection {
   constructor(
     app,
-    dbURI = 'mongodb+srv://davisphem:Fq5DBGxwenpnvJRg@davisphem.jsmcxlo.mongodb.net/uploader-test?retryWrites=true&w=majority',
+    dbURI = 'mongodb://localhost:27017/file-upload-test',
     port = 8080,
     domain = 'http://localhost'
   ) {

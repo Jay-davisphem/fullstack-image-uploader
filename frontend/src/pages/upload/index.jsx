@@ -25,7 +25,7 @@ export default function ({ setPage }) {
         name="Choose a file"
         onClick={() => setPage('loading')}
         color="#fff"
-        bg="#0077ff"
+        bg="#2F80ED"
       />
     </div>
   );

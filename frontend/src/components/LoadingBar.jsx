@@ -5,10 +5,10 @@ export default function ({ isError, setPage }) {
     <div className="loading-bar-container">
       <ProgressBar
         text="Uploading..."
-        loadingColor="#0077ff"
-        parentColor="lightgrey"
+        loadingColor="#2F80ED"
+        parentColor="#F2F2F2"
         height="10px"
-        borderRadius="20px"
+        borderRadius="8px"
         margin="30px 0 10px"
         completed={true}
         setPage={setPage}

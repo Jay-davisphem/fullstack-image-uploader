@@ -5,7 +5,7 @@ export default function ({ url, onClick }) {
       <p className="image-url">
         {url > 52 ? url.substring(0, 52) + '...' : url}
       </p>
-      <Button name="Copy Link" onClick={onClick} color="#fff" bg="#0077ff" />
+      <Button name="Copy Link" onClick={onClick} color="#fff" bg="#2F80ED" />
     </div>
   );
 }
