@@ -6,11 +6,12 @@ import ResultScreen from './pages/upload/result.screen';
 
 function App() {
   const [page, setPage] = useState('upload');
+  const [file, setFile] = useState();
   return (
     <div className="App">
-      {page === 'upload' && <UploadPage setPage={setPage} />}
+      {page === 'upload' && <UploadPage setPage={setPage} setFile={setFile} />}
       {page === 'loading' && <LoadingScreen setPage={setPage} />}
-      {page == 'result' && <ResultScreen setPage={setPage} />}
+      {page == 'result' && <ResultScreen setPage={setPage} file={file} />}
     </div>
   );
 }

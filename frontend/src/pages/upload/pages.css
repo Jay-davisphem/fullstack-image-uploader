@@ -20,7 +20,7 @@
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0;
-    color:  
+    color:  #4F4F4F;
 }
 
 .top-title-container .text.txt2{
@@ -44,6 +44,7 @@
 }
 
 .upload-container.placeholder{
+    position: relative;
     padding: 20px 100px;
 }
 .upload-container.placeholder{
@@ -67,12 +68,19 @@
     margin: 10px 0;
 }
 
-.upload-container.placeholder img.image.placeholder{
+/* .upload-container.placeholder img.image.placeholder{
 
+} */
+
+
+.upload-container .hidden-choosefile{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
 }
-
-
-
 
 .upload-container .action-txt{
     color: #aaa;

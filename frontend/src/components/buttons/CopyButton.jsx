@@ -1,11 +1,16 @@
 import Button from './Button';
-export default function ({ url, onClick }) {
+export default function ({ url, copyToClipBoard }) {
   return (
     <div className="copy">
       <p className="image-url">
-        {url > 52 ? url.substring(0, 52) + '...' : url}
+        {url.length > 42 ? url.substring(0, 42) + '...' : url}
       </p>
-      <Button name="Copy Link" onClick={onClick} color="#fff" bg="#2F80ED" />
+      <Button
+        name="Copy Link"
+        onClick={(e) => copyToClipBoard(url)}
+        color="#fff"
+        bg="#2F80ED"
+      />
     </div>
   );
 }
