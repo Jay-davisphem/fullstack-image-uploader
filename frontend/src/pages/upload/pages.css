@@ -130,6 +130,9 @@
     margin: 5px;
     color: #4F4F4F;
 }
+.copy .image-url.copied{
+    background-color: #fff;
+}
 .copy .btn{
     padding: 10px 20px;
     font-size: 0.6rem;
