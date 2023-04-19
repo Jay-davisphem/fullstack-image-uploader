@@ -1,4 +1,4 @@
-import LoadingBar from '../../components/LoadingBar'
-export default function({ setPage}){
-  return <LoadingBar setPage={setPage}/>
+import LoadingBar from '../../components/LoadingBar';
+export default function (props) {
+  return <LoadingBar {...props} />;
 }

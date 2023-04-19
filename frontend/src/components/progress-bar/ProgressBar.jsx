@@ -9,7 +9,7 @@ export default function ({
   height,
   borderRadius,
   margin,
-  completed,
+  isLoading,
   setPage,
 }) {
   const ref = useRef();
@@ -19,7 +19,7 @@ export default function ({
   };
   useEffect(() => {
     ref.currrent?.click();
-  }, [completed]);
+  }, [isLoading]);
   return (
     <Card>
       <p className="loading-text">{text}</p>
@@ -41,14 +41,14 @@ export default function ({
             outline: 'none',
             height,
           }}
-          animate={completed ? {} : animate}
+          animate={isLoading ? animate : {}}
           transition={{
             ease: 'linear',
             repeat: Infinity,
-            duration: 5,
+            duration: 1,
           }}
         ></motion.div>
-        {completed && (
+        {!isLoading && (
           <div
             ref={ref}
             style={{ textAlign: 'right' }}

@@ -7,11 +7,14 @@ import ResultScreen from './pages/upload/result.screen';
 function App() {
   const [page, setPage] = useState('upload');
   const [file, setFile] = useState();
+  const [isLoading, setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
+  const [cloudURL, setCloudURL] = useState("")
   return (
     <div className="App">
-      {page === 'upload' && <UploadPage setPage={setPage} setFile={setFile} />}
-      {page === 'loading' && <LoadingScreen setPage={setPage} />}
-      {page == 'result' && <ResultScreen setPage={setPage} file={file} />}
+      {page === 'upload' && <UploadPage setPage={setPage} setFile={setFile} isError={isError}/>}
+      {page === 'loading' && <LoadingScreen setPage={setPage} isLoading={isLoading} file={file} setIsLoading={setIsLoading} setCloudURL={setCloudURL}  setIsError={setIsError}/>}
+      {page == 'result' && <ResultScreen setPage={setPage} file={file} cloudURL={cloudURL}/>}
     </div>
   );
 }

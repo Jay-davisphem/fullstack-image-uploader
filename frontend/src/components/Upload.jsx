@@ -6,9 +6,10 @@ export default function ({ isPlaceHolder, img, setPage, setFile }) {
     <div className={`upload-container ${placeholder}`}>
       {isPlaceHolder && (
         <input
+          encType="multipart/form-data"
           type="file"
           className="hidden-choosefile"
-          name="choose-file"
+          name="image"
           onChange={() => uploadImage(setFile, setPage)}
         />
       )}

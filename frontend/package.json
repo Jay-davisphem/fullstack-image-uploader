@@ -26,5 +26,6 @@
   },
   "publisher": "jay-davisphem",
   "displayName": "David Oluwafemi",
-  "repository": "https://github.com/jay-davisphem/fullstack-image-uploader"
+  "repository": "https://github.com/jay-davisphem/fullstack-image-uploader",
+  "proxy": "http://localhost:8080"
 }

@@ -11,8 +11,7 @@ export function uploadImage(setFile, setPage) {
   file.addEventListener(
     'change',
     () => {
-      console.log(file.files);
-      Validation.validateSize(5000000, file.files[0].size) &&
+      Validation.validateSize(1024 * 1024 * 5, file.files[0].size) &&
         setPage('loading');
       setFile(file.files[0]);
     },

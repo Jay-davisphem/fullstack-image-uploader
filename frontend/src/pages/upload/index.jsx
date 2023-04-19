@@ -13,13 +13,18 @@ import uploadBg from '../../assets/upload-bg.svg';
 import { uploadImage } from '../../lib/utils';
 import './pages.css';
 
-export default function ({ setPage, setFile }) {
+export default function ({ setPage, setFile, isError }) {
   const img = {
     url: uploadBg,
     alt: 'Container',
   };
   return (
     <div className="upload-page">
+      {isError && (
+        <div style={{ color: 'red' }}>
+          An error occur in the previous operation
+        </div>
+      )}
       <TopTitle txt1="Upload your image" txt2="File should be Jpeg, Png..." />
       <Upload
         isPlaceHolder={true}

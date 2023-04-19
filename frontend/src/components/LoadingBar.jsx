@@ -1,6 +1,34 @@
 import { useState, useEffect } from 'react';
 import ProgressBar from './progress-bar/ProgressBar';
-export default function ({ isError, setPage }) {
+export default function ({
+  setPage,
+  isLoading,
+  setIsLoading,
+  file,
+  setCloudURL,
+  setIsError,
+}) {
+  const formData = new FormData();
+  formData.append('image', file);
+  useEffect(() => {
+    uploadImage(import.meta.env.VITE_DOMAIN_URL)
+  });
+  const uploadImage = (url) => {
+    fetch(`${url}/upload`, {
+      body: formData,
+      method: 'post',
+    })
+      .then((result) => result.json())
+      .then((val) => {
+        setIsLoading(false);
+        setCloudURL(val.url);
+        setPage('result');
+      })
+      .catch((err) => {
+        setIsError(true);
+        setPage('upload');
+      });
+  }
   return (
     <div className="loading-bar-container">
       <ProgressBar
@@ -10,7 +38,7 @@ export default function ({ isError, setPage }) {
         height="10px"
         borderRadius="8px"
         margin="30px 0 10px"
-        completed={true}
+        isLoading={isLoading}
         setPage={setPage}
       />
     </div>
