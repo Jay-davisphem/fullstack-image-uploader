@@ -33,5 +33,10 @@ app.use('/', uploadRoutes);
 app.use((error, req, res, next) => {
   console.log('This is the rejected field ->', error.field, error);
 });
-const connection = new Connection(app, process.env.DB_URI);
+const connection = new Connection(
+  app,
+  process.env.DB_URI,
+  8080,
+  process.env.ROOT_DOMAIN
+);
 connection.connect();
