@@ -39,7 +39,7 @@
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 - Where can I see your demo?
-  - [davisphem-upload](https://davisphem-uploads.vercel.app)
+  - [get-imagelink](https://get-imagelink.vercel.app)
 - What was your experience?
 - What have I learned/improved?
   - I learnt building smooth UI useful and well utilized
