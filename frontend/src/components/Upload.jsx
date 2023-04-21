@@ -10,7 +10,7 @@ export default function ({ isPlaceHolder, img, setPage, setFile }) {
           type="file"
           className="hidden-choosefile"
           name="image"
-          onChange={() => uploadImage(setFile, setPage)}
+          onChange={(e) => uploadImage(setFile, setPage)}
         />
       )}
       <img

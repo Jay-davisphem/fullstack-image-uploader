@@ -7,16 +7,14 @@ export function uploadImage(setFile, setPage) {
   const file = document.querySelector('.upload-container .hidden-choosefile');
   file.type = 'file';
   file.accept = 'image/';
+
+  file.addEventListener('change', () => {
+    Validation.validateSize(1024 * 1024 * 5, file.files[0].size) &&
+      setPage('loading');
+    setFile(file.files[0]);
+  });
+
   file.click();
-  file.addEventListener(
-    'change',
-    () => {
-      Validation.validateSize(1024 * 1024 * 5, file.files[0].size) &&
-        setPage('loading');
-      setFile(file.files[0]);
-    },
-    false
-  );
 }
 
 export async function copyToClipboard(text) {

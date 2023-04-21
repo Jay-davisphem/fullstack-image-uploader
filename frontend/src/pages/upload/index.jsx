@@ -35,7 +35,7 @@ export default function ({ setPage, setFile, isError }) {
       <p className="or">Or</p>
       <Button
         name="Choose a file"
-        onClick={() => uploadImage(setFile, setPage)}
+        onClick={(e) => uploadImage(setFile, setPage)}
         color="#fff"
         bg="#2F80ED"
       />
