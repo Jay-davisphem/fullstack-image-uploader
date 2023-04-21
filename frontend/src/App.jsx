@@ -15,7 +15,10 @@ function App() {
     <div className="App">
       <div
         style={{
-          minHeight: '70vh',
+          minHeight: '90vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         {page === 'upload' && (
