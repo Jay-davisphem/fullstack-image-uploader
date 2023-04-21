@@ -3,7 +3,8 @@
     border-radius: var(--placeholder-border-radius);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     padding: var(--major-padding);
-    max-width: var(--screen-min-width);
+    max-width: fit-content;
+    margin: 0 auto;
     max-height: var(--screen-min-h);
 }
 
