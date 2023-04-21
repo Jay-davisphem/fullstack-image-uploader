@@ -16,7 +16,7 @@ function App() {
       <div
         style={{
           minHeight: '90vh',
-          display: 'flex',
+             display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}

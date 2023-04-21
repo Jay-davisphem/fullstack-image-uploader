@@ -11,7 +11,8 @@ const UploadSchema = new Schema({
     type: String,
     unique: true,
     required: true,
-  }
+  },
+  password: String,
 });
 
 export default mongoose.model('Upload', UploadSchema);
