@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const UploadSchema = new Schema({
   url: {
     type: String,
-    unique: true,
     required: true,
   },
   imageID: {

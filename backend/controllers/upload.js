@@ -1,13 +1,15 @@
 import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 import Upload from '../db/upload.js';
-import cloudinary from '../services/lib/cloudinary.service.js';
+import king, {
+  upload as cloudinary,
+} from '../services/lib/cloudinary.service.js';
 import bcrypt from 'bcrypt';
 
 const postUtil = async (label, imageUrl, password) => {
   if (!password)
     return new Upload({ url: imageUrl, imageID: crypto.randomUUID() });
-  const hashedPass = await bcrypt.hash(password, process.env.SECRET);
+  const hashedPass = await bcrypt.hash(password, 12);
   return new Upload({
     url: imageUrl,
     imageID: crypto.randomUUID(),
@@ -39,9 +41,25 @@ const uploadImage = async (req, res, _next) => {
 };
 
 const getImages = async (req, res, _next) => {
+  const PER_PAGE = 20;
   try {
-    const images = await Upload.find();
-    return res.status(200).json(images);
+    let curPage = req.query.page || 1;
+    const perPage = +req.query.limit || PER_PAGE;
+    if (curPage < 1) curPage = 1;
+    const count = await Upload.count();
+    const totalPage = Math.ceil(count / perPage);
+    if (totalPage && curPage > totalPage) curPage = totalPage;
+    const images = await Upload.find()
+      .sort({ createdAt: -1, creator: 1 })
+      .skip(perPage * (curPage - 1))
+      .limit(perPage);
+    const url = req.get('host') + '/images/?page=';
+    return res.json({
+      message: 'Uploads fetched successsfully.',
+      images,
+      next: curPage >= totalPage ? null : `${url}${+curPage + 1}`,
+      previous: curPage <= 1 ? null : `${url}${+curPage - 1}`,
+    });
   } catch (err) {
     return res.status(404).json({ errorMessage: err.message });
   }
@@ -50,7 +68,12 @@ const getImages = async (req, res, _next) => {
 const postImage = async (req, res, _next) => {
   try {
     const { label, imageUrl, password } = req.body;
-    return await postUtil(label, imageUrl, password);
+    const upload = await postUtil(label, imageUrl, password);
+    await upload.save();
+    return res.status(200).json({
+      message: 'Success',
+      data: { url: upload.url, imageID: upload.imageID },
+    });
   } catch (err) {
     return res.status(400).json({ errorMessage: err.message });
   }
@@ -65,6 +88,7 @@ const deleteImage = async (req, res, _next) => {
       err.code = 403;
       throw err;
     } else {
+      await king.uploader.destroy(upload.url);
       await upload.deleteOne();
       return res.status(200).json({ message: 'Successful deletion!' });
     }
